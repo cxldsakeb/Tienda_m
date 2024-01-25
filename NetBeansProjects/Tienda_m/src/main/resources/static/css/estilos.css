@@ -1,0 +1,27 @@
+body {
+    background-color: bisque;
+}
+
+h2{
+    background-color: blue;
+    color: white;
+}
+nav a{
+    text-decoration:  none;
+    background-color: red;
+    color: white;
+}
+
+nav a:hover{
+   background-color: blue;
+   color: yellow; 
+}
+tbody tr:nth-child(odd) {
+   background-color: grey;
+   color: black; 
+}
+
+tbody tr:nth-child(even) {
+   background-color: black;
+   color: white; 
+}
