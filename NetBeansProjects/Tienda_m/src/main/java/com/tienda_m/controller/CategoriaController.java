@@ -19,11 +19,8 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 @RequestMapping("/categoria")
 public class CategoriaController {
-    
     @Autowired
     private CategoriaService categoriaService;
-    
-    
     // "/categoria/listado"
     @GetMapping("/listado")
     public String listado(Model model){
@@ -35,8 +32,7 @@ public class CategoriaController {
         return "/categoria/listado";
     }
     @Autowired
-    private FirebaseStorageServiceImpl firebaseStorageServiceImpl;
-    
+    private FirebaseStorageServiceImpl firebaseStorageServiceImpl;   
     @PostMapping("/guardar")
     public String guardar(Categoria categoria, 
             @RequestParam("imagenFile")
@@ -47,14 +43,10 @@ public class CategoriaController {
             categoriaService.save(categoria);
             String rutaImagen=firebaseStorageServiceImpl.cargaImagen(imagenFile,"categoria", categoria.getIdCategoria());
             categoria.setRutaImagen(rutaImagen);
-            
         }
         categoriaService.save(categoria);
         
-        return "redirect:/categoria/listado";
-        
-        
-        
+        return "redirect:/categoria/listado";  
     }
     @GetMapping("/modificar/{idCategoria}")
     public String modifica(Categoria categoria,Model model){
@@ -62,7 +54,6 @@ public class CategoriaController {
            model.addAttribute("categoria", categoria);
            return "/categoria/modifica";
     }
-    
     @GetMapping("/eliminar/{idCategoria}")
     public String elimina(Categoria categoria){
            categoriaService.delete(categoria);

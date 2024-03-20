@@ -20,4 +20,14 @@ public interface ProductoService {
     
     //Se elimina el registro que tenga el valor del idProducto pasado
     public void delete(Producto producto);
+    
+     // Esta consulta utiliza consultas ampliadas
+    public List<Producto> metodoJPA(double precioInf, double precioSup);
+
+    // Esta consulta utiliza consultas JPQL
+    public List<Producto>metodoJPQL( double precioInf, double precioSup);
+            
+    // Esta consulta utiliza consultas SQL
+    public List<Producto>metodoSQL(double precioInf, double precioSup);
+            
 }
