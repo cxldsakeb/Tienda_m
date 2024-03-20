@@ -30,4 +30,5 @@ public interface ProductoService {
     // Esta consulta utiliza consultas SQL
     public List<Producto>metodoSQL(double precioInf, double precioSup);
             
+    public List<Producto> metodoJPA2(int existenciasInf, int existenciasSup);
 }

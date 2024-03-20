@@ -71,4 +71,10 @@ public class ProductoServiceImpl
         return productoDAO.metodoSQL(precioInf, precioSup);
     }
     
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> metodoJPA2(int existenciasInf, int existenciasSup){
+       return productoDAO.findByExistenciasBetweenOrderByDescripcion(existenciasInf, existenciasSup);
+    }
+    
 }

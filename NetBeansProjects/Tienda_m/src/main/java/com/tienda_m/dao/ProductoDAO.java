@@ -10,6 +10,9 @@ public interface ProductoDAO extends JpaRepository<Producto, Long> {
     // Esta consulta utiliza consultas ampliadas
     public List<Producto> findByPrecioBetweenOrderByDescripcion(
             double precioInf, double precioSup);
+    
+    public List<Producto> findByExistenciasBetweenOrderByDescripcion(
+            int existenciasInf, int existenciasSup);
 
     // Esta consulta utiliza consultas JPQL
     @Query(value="SELECT p from Producto p WHERE p.precio BETWEEN :precioInf and :precioSup ORDER BY p.descripcion ASC")

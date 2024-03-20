@@ -93,5 +93,18 @@ public class PruebasController {
         model.addAttribute("precioSup",precioSup);
         return "/pruebas/listado2";
     }
+    
+    @PostMapping("/query4")
+    public String consultaquery4(
+            @RequestParam(value="existenciasInf") int existenciasInf,
+            @RequestParam(value="existenciasSup") int existenciasSup,
+            Model model){
+        
+        var lista = productoService.metodoJPA2(existenciasInf,existenciasSup);
+        model.addAttribute("productos", lista);
+        model.addAttribute("existenciasInf",existenciasInf);
+        model.addAttribute("existenciasSup",existenciasSup);
+        return "/pruebas/listado2";
+    }
 
 }
