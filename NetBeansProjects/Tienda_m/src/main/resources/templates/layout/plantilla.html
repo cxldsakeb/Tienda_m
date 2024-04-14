@@ -64,7 +64,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <!-- ESTO APARECE SI NO ESTOY AUTENTICADO -->
                         <ul class="navbar-nav" sec:authorize='isAuthenticated()'>
                             <li class='nav-item text-white my-auto'>
-                                <img th:src="@{$[session.usuarioImagen]}"
+                                <img th:src="@{${session.usuarioImagen}}"
                                      alt="foto"
                                      height="40"
                                      class="rounded-circle"/>
